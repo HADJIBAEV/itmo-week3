@@ -9,12 +9,9 @@
     <script>
       function myFunction(){
         let url = document.getElementById('inp').value;
-		let response = await fetch(url);
-        document.getElementById('inp').value = "";
-		let text = await response.text(); 
-        document.getElementById('inp').value = text;
-      }
-      
+	              fetch(url)
+	                   .then((response) => response.text())
+                           .then((data) => {return  document.getElementById('inp').value = data});
    </script>
  </body>
 </html>
